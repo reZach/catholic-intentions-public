@@ -1,0 +1,12 @@
+﻿@{ 
+    Layout = null;
+}
+
+<environment exclude="Development">
+    <script async src="~/js/site.min.js" asp-append-version="true" type="text/javascript"></script>
+</environment>
+
+<environment include="Development">
+    <script src="~/dist/vendor.js" type="text/javascript"></script>
+    <script src="~/dist/main.js" type="text/javascript"></script>
+</environment>

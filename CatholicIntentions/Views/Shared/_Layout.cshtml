@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <base href="~/" />
+    <link rel="manifest" href="~/manifest.json">
+    @RenderSection("head", required: false)
+
+    @* Inline, for page speed *@
+    <style type="text/css">
+        .navbar,hr{margin-bottom:20px}*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}button,input,select,textarea{font-family:inherit;font-size:inherit;line-height:inherit}body{background-color:#fff;font-family:Dekko,cursive;margin-top:0px;margin-bottom:0px;}body,html{height:100%}.height-container{position:relative;height:100%}.row{margin-right:-15px;margin-left:-15px}.container-fluid{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{font-family:inherit;font-weight:500;line-height:1.1;color:inherit}.h1,.h2,.h3,h1,h2,h3{margin-top:20px;margin-bottom:10px}.h1,h1{font-size:36px}.h2,h2{font-size:30px}p{margin:0 0 10px}.main-nav{position:fixed;top:0;left:0;right:0;z-index:1}a,div,p{font-size:18px;text-size-adjust:none;-webkit-text-size-adjust:none;-moz-text-size-adjust:none;-ms-text-size-adjust:none}a{background-color:transparent;text-decoration:none}hr{margin-top:0;border:0;border-top:2px solid #cc4618}.blue{background-color:#1b36cc}.navbar-toggle .icon-bar{display:block;width:22px;height:2px;border-radius:1px}.navbar,.navbar-toggle{position:relative;border:1px solid transparent}.navbar{min-height:50px}.navbar-toggle{float:right;padding:9px 10px;margin-top:8px;margin-right:15px;margin-bottom:8px;background-color:transparent;background-image:none;border-radius:4px}.navbar-toggle .icon-bar+.icon-bar{margin-top:4px}.navbar-collapse{overflow:hidden;padding-right:15px;padding-left:15px;-webkit-overflow-scrolling:touch;border-top:1px solid transparent;-webkit-box-shadow:inset 0 1px 0 rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.1);transition:height .3s ease-out;height:auto}.page-content {height:auto;margin-bottom:60px;}.social-buttons {position:fixed;bottom:5px;}.social-buttons * {float:left;margin-right:2px;}@@media (max-width:767px){body{padding-top:50px}.navbar-collapse{height:0}.navbar-brand{color:#fff!important;font-size:24px}.navbar-toggle{background-color:#fff}.main-nav .navbar li a{color:#fff}.navbar-toggle .icon-bar{background-color:#000}}.ci-button,.ci-button a{color:#fff}@@media (min-width:768px){.navbar-toggle{display:none}.navbar-collapse{height:auto!important;width:auto}.col-sm-3,.col-sm-9{float:left}.col-sm-3{width:25%}.col-sm-9{width:75%}.main-nav{height:100%;width:calc(25% - 20px)}.main-nav .navbar{border-radius:0;border-width:0;height:100%}.main-nav .navbar-header{float:none}.main-nav .navbar a{width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#fff}}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}.swiper-slide,.swiper-wrapper{width:100%;height:100%;position:relative}.swiper-container{margin:0 auto;position:relative;overflow:hidden;list-style:none;padding:0;z-index:0}.swiper-wrapper{z-index:1;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-transition-property:-webkit-transform;-o-transition-property:transform;transition-property:transform;transition-property:transform,-webkit-transform;-webkit-box-sizing:content-box;box-sizing:content-box}.swiper-slide{-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-transition-property:-webkit-transform;-o-transition-property:transform;transition-property:transform;transition-property:transform,-webkit-transform}.navbar-brand{float:left;height:50px;padding:15px;font-size:18px;line-height:20px}.ci-button{background-color:#1b36cc;border-width:0;margin-bottom:16px;margin-right:10px}.faux-body{margin-bottom:-50px;position:relative}.col-sm-3,.col-sm-9{position:relative;min-height:1px;padding-right:15px;padding-left:15px}.btn-group-vertical>.btn-group:after,.btn-group-vertical>.btn-group:before,.btn-toolbar:after,.btn-toolbar:before,.clearfix:after,.clearfix:before,.container-fluid:after,.container-fluid:before,.container:after,.container:before,.dl-horizontal dd:after,.dl-horizontal dd:before,.form-horizontal .form-group:after,.form-horizontal .form-group:before,.modal-footer:after,.modal-footer:before,.modal-header:after,.modal-header:before,.nav:after,.nav:before,.navbar-collapse:after,.navbar-collapse:before,.navbar-header:after,.navbar-header:before,.navbar:after,.navbar:before,.pager:after,.pager:before,.panel-body:after,.panel-body:before,.row:after,.row:before{display:table;content:" "}.btn-group-vertical>.btn-group:after,.btn-toolbar:after,.clearfix:after,.container-fluid:after,.container:after,.dl-horizontal dd:after,.form-horizontal .form-group:after,.modal-footer:after,.modal-header:after,.nav:after,.navbar-collapse:after,.navbar-header:after,.navbar:after,.pager:after,.panel-body:after,.row:after{clear:both}
+    </style>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    @if (Context.Request.Headers["User-Agent"].ToString().IndexOf("Speed Insights") < 0)
+    {
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-117944992-1" type="text/javascript"></script>
+        <script type="text/javascript">
+            function gtag() { dataLayer.push(arguments) } window.dataLayer = window.dataLayer || [], gtag("js", new Date), gtag("config", "UA-117944992-1");    
+        </script>
+    }
+</head>
+<body>
+    @* Social code *@
+    @Html.Partial("Social")
+
+    @* Base HTML *@
+    <div class="height-container">
+        <div class="container-fluid height-container">
+            <div class="row height-container">
+                <div class="col-sm-3">
+                    <div class="main-nav">
+                        <div class="navbar blue">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-action="toggle" data-target=".navbar-collapse">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a href="/" class="navbar-brand">Catholic Intentions</a>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="navbar-collapse" data-collapsed="true" aria-hidden="false">
+                                <ul class="nav navbar-nav">
+                                    <li>
+                                        <a href="/"><i class="fas fa-home"></i> Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="/prayer-requests"><i class="fas fa-heart"></i> Prayer requests</a>
+                                    </li>
+                                    <li>
+                                        <a href="/submit-prayer-request"><i class="fas fa-pencil-alt"></i> Submit prayer request</a>
+                                    </li>
+                                    <li>
+                                        <a href="/catholic/prayers"><i class="fas fa-book-open"></i> Catholic prayers</a>
+                                    </li>
+                                    <li>
+                                        <a href="/about-us"><i class="fas fa-info-circle"></i> About us</a>
+                                    </li>
+                                    <li>
+                                        <a href="/privacy-policy"><i class="far fa-eye"></i> Privacy policy</a>
+                                    </li>
+                                    <li>
+                                        <a href="/terms-of-use"><i class="fas fa-file-alt"></i> Terms of use</a>
+                                    </li>
+                                    <li>
+                                        <a href="/sitemap"><i class="fas fa-sitemap"></i> Sitemap</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-9 faux-body height-container">
+                    @RenderBody()
+
+                    @* Social HTML *@      
+                    <div class="social-buttons">
+                        <div class="fb-like" data-href="https://www.facebook.com/catholicintentions" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+                        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Help me pray for others or pray for your own prayer request." data-url="https://www.catholicintentions.com/" data-dnt="true" data-show-count="false">Tweet</a>                        
+                    </div>                                        
+                </div>                
+            </div>
+        </div>
+    </div>
+
+
+    @* Optimizing css delivery: https://developers.google.com/speed/docs/insights/OptimizeCSSDelivery *@
+    <noscript id="deferred-styles">
+        <environment exclude="Development">
+            <link rel="stylesheet" type="text/css" href="~/css/site.min.css" asp-append-version="true" />
+        </environment>
+
+        <environment include="Development">
+            <link rel="stylesheet" type="text/css" href="~/dist/base.css" asp-append-version="true" />
+            <link rel="stylesheet" type="text/css" href="~/dist/site.css" asp-append-version="true" />
+            <link rel="stylesheet" type="text/css" href="~/dist/fontawesome-all.css" asp-append-version="true" />
+            <link rel="stylesheet" type="text/css" href="~/dist/googlefont.css" asp-append-version="true" />
+            <link rel="stylesheet" type="text/css" href="~/dist/swiper.css" asp-append-version="true" />
+        </environment>
+    </noscript>
+    <script type="text/javascript">
+        var loadDeferredStyles = function () { var e = document.getElementById("deferred-styles"), n = document.createElement("div"); n.innerHTML = e.textContent, document.body.appendChild(n), e.parentElement.removeChild(e) }, raf = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame; raf ? raf(function () { window.setTimeout(loadDeferredStyles, 0) }) : window.addEventListener("load", loadDeferredStyles);
+    </script>
+
+    @* Mobile nav js *@
+    <script async src="~/js/mobilenav.min.js" asp-append-version="true" type="text/javascript"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

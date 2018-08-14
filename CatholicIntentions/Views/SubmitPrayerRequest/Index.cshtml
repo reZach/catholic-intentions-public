@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Submit prayer request - Catholic Intentions";
+}
+
+@section head {
+    <meta property="og:title" content="Submit Prayer Request Page" />
+    <meta property="og:type" content="news.publishes" />
+    <meta property="og:url" content="https://www.catholicintentions.com/submit" />
+    <meta property="og:image" content="https://www.catholicintentions.com/favicon.ico" />
+    <meta name="description" content="Submit your prayer request. Pray for hope, pray for healing.">
+}
+
+    <div class="page-content">
+        <h1>Send us your prayer request</h1><hr />
+        <p>What or who are you praying for?</p>
+        <p class="">
+            *Prayer intentions are first reviewed based on our <a href="/terms-of-use">terms of use</a>.            
+            It may take up to one or two days for your prayer to be viewable.
+        </p>
+        <div id="react-app"></div>
+    </div>
+
+@section scripts {
+    @Html.Partial("ReactPage")
+}

@@ -1,0 +1,34 @@
+{
+  "name": "catholic_intentions",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "webpack --env.dev && webpack --env.dev --config webpack.config.vendor.js",
+    "prod": "webpack --env.prod && webpack --env.prod --config webpack.config.vendor.js"
+  },
+  "devDependencies": {
+    "@types/history": "4.6.0",
+    "@types/react": "15.0.35",
+    "@types/react-dom": "15.5.1",
+    "@types/react-router": "4.0.12",
+    "@types/react-router-dom": "4.0.5",
+    "@types/webpack-env": "1.13.0",
+    "aspnet-webpack": "^2.0.1",
+    "aspnet-webpack-react": "^3.0.0",
+    "awesome-typescript-loader": "3.2.1",
+    "css-loader": "0.28.4",
+    "extract-text-webpack-plugin": "2.1.2",
+    "file-loader": "1.1.11",
+    "firebase": "4.12.0",
+    "isomorphic-fetch": "2.2.1",
+    "cash-dom": "2.1.7",
+    "react": "15.6.1",
+    "react-dom": "15.6.1",
+    "react-id-swiper": "1.6.3",
+    "react-router-dom": "4.1.1",
+    "style-loader": "0.18.2",
+    "typescript": "2.4.1",
+    "url-loader": "0.5.9",
+    "webpack": "2.5.1"
+  }
+}
